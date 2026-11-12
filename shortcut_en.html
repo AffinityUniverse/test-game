@@ -4308,9 +4308,12 @@ body {
   }
 }
 </style>
+
+
 </head>
 <body data-asg-build="AU-ASG-20260824-03">
 <div id="affinityShortcutGame" class="asg-ready" data-license-owner="AFFINITY-UNIVERSE" data-build-id="AU-ASG-20260824-03" data-build-fingerprint="771FF5FF8AD52CA7" data-distribution="protected">
+  <a class="au-game-home-v19" href="index.html" target="_top" aria-label="Back to Affinity Universe Home" title="Back to Affinity Universe Home"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z"/></svg></a>
   <div class="asg-wrap">
     <div class="asg-license-mark" title="Copyright © 2026 Affinity Universe. All rights reserved." aria-label="Copyright © 2026 Affinity Universe. All rights reserved.">© 2026 Affinity Universe · AU-ASG-20260824-03</div>
     <div class="asg-header">
@@ -4347,6 +4350,7 @@ body {
       <button type="button" id="asgPauseBtn" disabled>Pause</button>
       <button type="button" id="asgResetBtn">Restart</button>
       <button type="button" id="asgFullscreenBtn">Enter Fullscreen</button>
+      <a class="au-home-inline-v19" href="index.html" target="_top" aria-label="Back to Affinity Universe Home" title="Back to Affinity Universe Home"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z"/></svg></a>
     </div>
 
     <div class="asg-setup-panel">
@@ -4460,6 +4464,7 @@ body {
 
     <div class="af-final-cta-v28" id="asgFinalCtaV11" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Shortcut Game Results" inert>
       <div class="af-final-cta-card-v28 af-final-game-card-v34">
+      <a class="au-home-final-v20 au-game-home-v19" href="index.html" target="_top" aria-label="Back to Affinity Universe Home" title="Back to Affinity Universe Home"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z"/></svg></a>
         <button type="button" class="af-final-close-v4" id="asgFinalCloseBtn" aria-label="Close and view the Top 5 leaderboard" title="Close and view leaderboard"><span aria-hidden="true">&times;</span></button>
         <div class="af-final-score-v28" id="asgFinalScoreV14">Final Score: 0</div>
         <h2 id="asgFinalTitleV14">The shortcut game is over.<br>Ready to try another game? <span class="af-final-pad-v47" aria-hidden="true">🚀</span></h2>
@@ -6492,7 +6497,7 @@ function auPlayIpadClip(src,volume=1,duckMs=0){
   }
 
   function handleBeforeUnload(e) {
-    if (state.running || state.collisionLock) {
+    if ((state.running || state.collisionLock) && !window.__auHomeNavigationV19) {
       e.preventDefault();
       e.returnValue = "";
       return "";
@@ -9095,5 +9100,233 @@ body { display:block !important; min-height:100vh !important; background:#0b1328
          drop-shadow(0 0 22px rgba(236,24,64,.75)) !important;
 }
 </style>
+
+<script id="auGameHomeLinkBehaviorV19">
+(function(){
+  'use strict';
+  // Only an explicit Home click bypasses the shortcut game's beforeunload
+  // prompt; ordinary reload/close retains its existing protection.
+  document.querySelectorAll('.au-game-home-v19, .au-home-inline-v19').forEach(function(link){
+    link.addEventListener('click',function(){ window.__auHomeNavigationV19=true; },{capture:true});
+  });
+})();
+</script>
+<style id="auGameHomeNavigationTutorialMatchV20">
+/* Source matched exactly: tutorial(20261112-071036).html, pqHomeNavigationV1.
+   Intro=corner 50px / 44px; play=far right 38px / 34px;
+   final=card corner 46px / 40px. Keep the four game toolbars stable. */
+#affinityShortcutGame > .au-game-home-v19,
+#app > .au-game-home-v19,
+#affinityShortcutGame .asg-toolbar > .au-home-inline-v19,
+#app .toolbar > .au-home-inline-v19,
+#affinityShortcutGame .af-final-game-card-v34 > .au-home-final-v20,
+#app .af-final-game-card-v34 > .au-home-final-v20 {
+  box-sizing:border-box !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex:0 0 auto !important;
+  width:46px !important;
+  height:46px !important;
+  min-width:46px !important;
+  min-height:46px !important;
+  max-width:46px !important;
+  max-height:46px !important;
+  padding:10px !important;
+  margin:0 !important;
+  text-decoration:none !important;
+  color:#fff !important;
+  background:linear-gradient(145deg,#0866f8 0%,#1d83ff 100%) !important;
+  border:1px solid rgba(212,233,255,.6) !important;
+  border-radius:15px !important;
+  box-shadow:0 7px 23px rgba(0,100,255,.24),inset 0 1px 0 rgba(255,255,255,.25) !important;
+  opacity:1 !important;
+  cursor:pointer !important;
+  pointer-events:auto !important;
+  touch-action:manipulation !important;
+  -webkit-tap-highlight-color:transparent !important;
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease !important;
+}
+#affinityShortcutGame .au-game-home-v19 svg,
+#app .au-game-home-v19 svg,
+#affinityShortcutGame .au-home-inline-v19 svg,
+#app .au-home-inline-v19 svg {
+  display:block !important;
+  flex:none !important;
+  width:24px !important;
+  height:24px !important;
+  stroke:#fff !important;
+  fill:none !important;
+  pointer-events:none !important;
+}
+#affinityShortcutGame .au-game-home-v19:hover,
+#app .au-game-home-v19:hover,
+#affinityShortcutGame .au-home-inline-v19:hover,
+#app .au-home-inline-v19:hover {
+  transform:translateY(-2px) !important;
+  filter:none !important;
+  box-shadow:0 11px 28px rgba(0,100,255,.38),inset 0 1px 0 rgba(255,255,255,.32) !important;
+}
+#affinityShortcutGame .au-game-home-v19:active,
+#app .au-game-home-v19:active,
+#affinityShortcutGame .au-home-inline-v19:active,
+#app .au-home-inline-v19:active {transform:translateY(0) scale(.97) !important;}
+#affinityShortcutGame .au-game-home-v19:focus-visible,
+#app .au-game-home-v19:focus-visible,
+#affinityShortcutGame .au-home-inline-v19:focus-visible,
+#app .au-home-inline-v19:focus-visible {outline:3px solid #fff !important;outline-offset:4px !important;}
+
+/* Start / ranking state: same full-screen corner position as tutorial intro. */
+#affinityShortcutGame > .au-game-home-v19,
+#app > .au-game-home-v19 {
+  position:fixed !important;
+  z-index:12000 !important;
+  top:clamp(14px,2.3vw,28px) !important;
+  right:clamp(14px,2.4vw,30px) !important;
+  bottom:auto !important;
+  left:auto !important;
+  width:50px !important;
+  min-width:50px !important;
+  max-width:50px !important;
+  height:50px !important;
+  min-height:50px !important;
+  max-height:50px !important;
+}
+/* Game play uses compact tutorial-editor home icon at the far right of controls. */
+#affinityShortcutGame .asg-toolbar > .au-home-inline-v19,
+#app .toolbar > .au-home-inline-v19 {display:none !important;}
+#affinityShortcutGame.asg-playing > .au-game-home-v19,
+#app.typing-in-game > .au-game-home-v19 {display:none !important;}
+#affinityShortcutGame.asg-playing .asg-toolbar > .au-home-inline-v19,
+#app.typing-in-game .toolbar > .au-home-inline-v19 {
+  display:inline-flex !important;
+  position:relative !important;
+  z-index:10 !important;
+  order:9999 !important;
+  justify-self:end !important;
+  align-self:center !important;
+  flex:0 0 38px !important;
+  width:38px !important;
+  min-width:38px !important;
+  max-width:38px !important;
+  height:38px !important;
+  min-height:38px !important;
+  max-height:38px !important;
+  padding:8px !important;
+  margin:0 0 0 auto !important;
+  border-radius:14px !important;
+  box-shadow:0 5px 13px rgba(0,100,255,.20),inset 0 1px 0 rgba(255,255,255,.20) !important;
+}
+#affinityShortcutGame.asg-playing .asg-toolbar > .au-home-inline-v19 svg,
+#app.typing-in-game .toolbar > .au-home-inline-v19 svg {
+  width:20px !important;height:20px !important;
+}
+/* In a 4-column half-screen desktop layout the 4 existing game buttons
+   must remain aligned with the Score/Combo/Level/Lives cells. Show the
+   compact home button at the corner here rather than creating a fifth row. */
+@media (min-width:701px) and (max-width:1260px){
+  #affinityShortcutGame:not(.au-touch-tablet).asg-playing .asg-toolbar > .au-home-inline-v19,
+  #app:not(.au-touch-tablet).typing-in-game .toolbar > .au-home-inline-v19 {display:none !important;}
+  #affinityShortcutGame:not(.au-touch-tablet).asg-playing > .au-game-home-v19,
+  #app:not(.au-touch-tablet).typing-in-game > .au-game-home-v19 {
+    display:inline-flex !important;
+    width:38px !important;height:38px !important;
+    min-width:38px !important;min-height:38px !important;
+    max-width:38px !important;max-height:38px !important;
+    padding:8px !important;border-radius:14px !important;
+  }
+  #affinityShortcutGame:not(.au-touch-tablet).asg-playing > .au-game-home-v19 svg,
+  #app:not(.au-touch-tablet).typing-in-game > .au-game-home-v19 svg {width:20px !important;height:20px !important;}
+}
+@media (max-width:1100px){
+  #affinityShortcutGame.asg-playing .asg-toolbar > .au-home-inline-v19,
+  #app.typing-in-game .toolbar > .au-home-inline-v19 {
+    flex:0 0 34px !important;
+    width:34px !important;min-width:34px !important;max-width:34px !important;
+    height:34px !important;min-height:34px !important;max-height:34px !important;
+    padding:7px !important;border-radius:12px !important;
+  }
+  #affinityShortcutGame.asg-playing .asg-toolbar > .au-home-inline-v19 svg,
+  #app.typing-in-game .toolbar > .au-home-inline-v19 svg {width:18px !important;height:18px !important;}
+}
+/* Touch gameplay: two wide action buttons + tutorial-sized 34/38px home,
+   all on one line with home flush to the right. */
+@media (max-width:700px){
+  #affinityShortcutGame.asg-playing .asg-toolbar,
+  #app.typing-in-game .toolbar {grid-template-columns:minmax(0,1fr) minmax(0,1fr) 34px !important;}
+}
+#affinityShortcutGame.au-touch-tablet.asg-playing .asg-toolbar,
+#app.au-touch-tablet.typing-in-game .toolbar {
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) 38px !important;
+}
+@media (max-width:1100px){
+  #affinityShortcutGame.au-touch-tablet.asg-playing .asg-toolbar,
+  #app.au-touch-tablet.typing-in-game .toolbar {
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) 34px !important;
+  }
+}
+
+/* Final game-choice dialog: same corner home as tutorial completion card. */
+#affinityShortcutGame .af-final-game-card-v34,
+#app .af-final-game-card-v34 {position:relative !important;}
+#affinityShortcutGame .af-final-game-card-v34 > .au-home-final-v20,
+#app .af-final-game-card-v34 > .au-home-final-v20 {
+  position:absolute !important;
+  top:18px !important;
+  right:18px !important;
+  z-index:30 !important;
+}
+/* Keep the existing X (view rankings) control: move it left of Home. */
+#affinityShortcutGame .af-final-game-card-v34 > .af-final-close-v4 {
+  right:76px !important;
+}
+#app .af-final-game-card-v34 > .af-final-close-v58 {
+  right:76px !important;
+}
+/* The floating button would otherwise appear over the modal at viewport edge. */
+#affinityShortcutGame.au-home-final-open-v20 > .au-game-home-v19,
+#app.au-home-final-open-v20 > .au-game-home-v19,
+#affinityShortcutGame:has(.af-final-cta-v28.show) > .au-game-home-v19,
+#app:has(.af-final-cta-v28.show) > .au-game-home-v19 {display:none !important;}
+@media (max-width:780px){
+  #affinityShortcutGame > .au-game-home-v19,
+  #app > .au-game-home-v19 {
+    width:44px !important;min-width:44px !important;max-width:44px !important;
+    height:44px !important;min-height:44px !important;max-height:44px !important;
+    padding:9px !important;border-radius:13px !important;
+  }
+  #affinityShortcutGame > .au-game-home-v19 svg,
+  #app > .au-game-home-v19 svg {width:21px !important;height:21px !important;}
+  #affinityShortcutGame .af-final-game-card-v34 > .au-home-final-v20,
+  #app .af-final-game-card-v34 > .au-home-final-v20 {
+    top:12px !important;right:12px !important;
+    width:40px !important;min-width:40px !important;max-width:40px !important;
+    height:40px !important;min-height:40px !important;max-height:40px !important;
+    padding:9px !important;border-radius:13px !important;
+  }
+  #affinityShortcutGame .af-final-game-card-v34 > .au-home-final-v20 svg,
+  #app .af-final-game-card-v34 > .au-home-final-v20 svg {width:21px !important;height:21px !important;}
+  #affinityShortcutGame .af-final-game-card-v34 > .af-final-close-v4,
+  #app .af-final-game-card-v34 > .af-final-close-v58 {right:62px !important;}
+}
+@media(prefers-reduced-motion:reduce){
+  #affinityShortcutGame .au-game-home-v19,
+  #app .au-game-home-v19,
+  #affinityShortcutGame .au-home-inline-v19,
+  #app .au-home-inline-v19 {transition:none !important;}
+}
+</style>
+<script id="auGameHomeFinalStateV20">
+(function(){
+  'use strict';
+  var root=document.getElementById('affinityShortcutGame')||document.getElementById('app');
+  if(!root)return;
+  var dialog=root.querySelector('.af-final-cta-v28');
+  if(!dialog)return;
+  function sync(){root.classList.toggle('au-home-final-open-v20',dialog.classList.contains('show'));}
+  new MutationObserver(sync).observe(dialog,{attributes:true,attributeFilter:['class']});
+  sync();
+})();
+</script>
 </body>
 </html>
