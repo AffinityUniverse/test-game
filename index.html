@@ -540,6 +540,13 @@
       }
     }
 
+    /* Mobile-only main background; keep bg.png unchanged on desktop/tablet. */
+    @media (max-width: 767px), (max-height: 500px) and (pointer: coarse) {
+      .landing {
+        background-image: url('bg-mo.png');
+      }
+    }
+
     @media(prefers-reduced-motion:reduce) {
 
       .landing-title,
