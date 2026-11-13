@@ -27796,5 +27796,217 @@ html body #af-tutorial .pq-tutorial-fw{
   html body #af-tutorial .pq-fw-ring,html body #af-tutorial .pq-fw-center-flash{display:none!important;}
 }
 </style>
+
+<!-- PQ FULL-WIDTH EDITOR + COMPACT RIGHT-ALIGNED ACTIONS -->
+<style id="pqFullscreenToolbarV6">
+/* Expand the actual editor canvas to the browser edges; preserve tablet layout rules. */
+html:not(.au-tablet-mode),
+html:not(.au-tablet-mode) body {
+  width:100%!important;
+  max-width:none!important;
+  height:100%!important;
+  min-height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+}
+html:not(.au-tablet-mode) body {
+  display:block!important;
+  background:#0e1529!important;
+}
+html:not(.au-tablet-mode) body #af-tutorial,
+html:not(.au-tablet-mode) body #af-tutorial.af-v60-width-locked {
+  box-sizing:border-box!important;
+  display:block!important;
+  width:100%!important;
+  min-width:0!important;
+  max-width:none!important;
+  height:100vh!important;
+  height:100dvh!important;
+  min-height:0!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  overflow:hidden!important;
+}
+html:not(.au-tablet-mode) body #af-tutorial .af-app,
+html:not(.au-tablet-mode) body #af-tutorial .af-workspace {
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+}
+/* The previous 330px fixed-width action rail caused icons to overlap the panel.
+   Size it to its content, and give the mission area the remaining space. */
+html:not(.au-tablet-mode) body #af-tutorial .af-topbar {
+  box-sizing:border-box!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) max-content!important;
+  column-gap:clamp(8px,1vw,16px)!important;
+  padding-left:clamp(10px,1vw,18px)!important;
+  padding-right:clamp(10px,1vw,18px)!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+}
+html:not(.au-tablet-mode) body #af-tutorial .af-top-actions {
+  box-sizing:border-box!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  justify-self:end!important;
+  flex:0 0 auto!important;
+  flex-wrap:nowrap!important;
+  width:max-content!important;
+  min-width:0!important;
+  max-width:none!important;
+  gap:6px!important;
+  margin:0!important;
+  padding:0!important;
+  white-space:nowrap!important;
+}
+html:not(.au-tablet-mode) body #af-tutorial .af-top-actions > * {
+  flex-shrink:0!important;
+}
+html:not(.au-tablet-mode) body #af-tutorial #afExport {
+  box-sizing:border-box!important;
+  flex:0 0 112px!important;
+  width:112px!important;
+  min-width:0!important;
+  max-width:112px!important;
+  padding:0 9px!important;
+  font-size:14px!important;
+  white-space:nowrap!important;
+  text-align:center!important;
+}
+/* Preserve the home icon at the right edge of the toolbar. */
+html:not(.au-tablet-mode) body #af-tutorial .af-top-actions > .pq-home-game {
+  order:9999!important;
+  margin:0!important;
+}
+@media(max-width:1250px) {
+  html:not(.au-tablet-mode) body #af-tutorial .af-top-actions {gap:4px!important;}
+  html:not(.au-tablet-mode) body #af-tutorial #afExport {
+    flex-basis:100px!important;width:100px!important;max-width:100px!important;
+    font-size:12px!important;padding:0 5px!important;
+  }
+}
+/* iPads already have a two-row header; only make the export button more compact. */
+html.au-tablet-mode body #af-tutorial #afExport {
+  min-width:0!important;
+  width:auto!important;
+  max-width:114px!important;
+  padding-left:10px!important;padding-right:10px!important;
+  font-size:13px!important;
+}
+</style>
+
+
+<!-- PQ RIGHT SIDEBAR VISIBILITY + HEADER ALIGNMENT V7 -->
+<style id="pqSidebarAlignmentV7">
+/* Keep the mission and actions in ONE grid row on desktop, even when older
+   responsive CSS tries to move the toolbar into a second header row. */
+html:not(.au-tablet-mode) body #af-tutorial .af-topbar {
+  grid-template-rows:minmax(0,1fr)!important;
+  grid-auto-rows:minmax(0,1fr)!important;
+  align-items:center!important;
+}
+/* Widen the tools panel just enough to align its left border with the
+   beginning of the header action group. Keep the drawing area flexible. */
+html:not(.au-tablet-mode) body #af-tutorial .af-workspace {
+  grid-template-columns:60px minmax(0,1fr) 400px!important;
+}
+html:not(.au-tablet-mode) body #af-tutorial .af-sidebar {
+  box-sizing:border-box!important;
+  width:400px!important;
+  min-width:400px!important;
+  max-width:400px!important;
+}
+/* An older 37vh cap clipped the lower half of the colour wheel and the
+   opacity slider. Distribute height according to viewport, never crop them. */
+html:not(.au-tablet-mode) body #af-tutorial .af-top-panel {
+  flex:0 0 clamp(345px,48dvh,490px)!important;
+  height:auto!important;
+  max-height:490px!important;
+  min-height:0!important;
+  overflow:hidden!important;
+}
+html:not(.au-tablet-mode) body #af-tutorial #afColourPanel.active {
+  box-sizing:border-box!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-start!important;
+  align-items:stretch!important;
+  flex:1 1 auto!important;
+  height:auto!important;
+  min-height:0!important;
+  padding:8px 12px!important;
+  overflow:visible!important;
+}
+html:not(.au-tablet-mode) body #af-tutorial #afColourPanel .af-colour-topline {
+  box-sizing:border-box!important;
+  flex:0 0 66px!important;
+  min-height:66px!important;
+  margin:0!important;
+}
+html:not(.au-tablet-mode) body #af-tutorial #afColourPanel .af-wheel-wrap {
+  box-sizing:border-box!important;
+  flex:0 0 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:0!important;
+  height:auto!important;
+  margin:0 auto 4px!important;
+  padding:0!important;
+  width:100%!important;
+  overflow:visible!important;
+}
+html:not(.au-tablet-mode) body #af-tutorial #afColourPanel .af-wheel-stage,
+html:not(.au-tablet-mode) body #af-tutorial #afColourPanel #afWheelCanvas {
+  box-sizing:border-box!important;
+  flex:none!important;
+  width:clamp(178px,26dvh,248px)!important;
+  height:clamp(178px,26dvh,248px)!important;
+  max-width:100%!important;
+  transform:none!important;
+}
+html:not(.au-tablet-mode) body #af-tutorial #afColourPanel .af-range {
+  box-sizing:border-box!important;
+  flex:0 0 auto!important;
+  min-height:24px!important;
+  margin:6px 0 0!important;
+}
+/* Layers remains usable at shorter viewport heights. */
+html:not(.au-tablet-mode) body #af-tutorial .af-layer-panel {
+  flex:1 1 0!important;
+  min-height:clamp(125px,20dvh,210px)!important;
+}
+@media(max-height:710px) {
+  html:not(.au-tablet-mode) body #af-tutorial .af-top-panel {
+    flex-basis:340px!important;
+    max-height:340px!important;
+  }
+  html:not(.au-tablet-mode) body #af-tutorial #afColourPanel .af-wheel-stage,
+  html:not(.au-tablet-mode) body #af-tutorial #afColourPanel #afWheelCanvas {
+    width:174px!important;height:174px!important;
+  }
+}
+/* Split-view desktops can still open the palette without spilling outside. */
+@media(max-width:899px) {
+  html:not(.au-tablet-mode) body #af-tutorial .af-workspace {
+    grid-template-columns:52px minmax(0,1fr) 340px!important;
+  }
+  html:not(.au-tablet-mode) body #af-tutorial .af-sidebar {
+    width:340px!important;min-width:340px!important;max-width:340px!important;
+  }
+  html:not(.au-tablet-mode) body #af-tutorial .af-top-actions {gap:3px!important;}
+}
+</style>
+
 </body>
 </html>
