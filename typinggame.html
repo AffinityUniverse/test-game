@@ -976,10 +976,11 @@ html, body {
 </head>
 <body>
 <main class="app" id="app">
-  <a class="au-game-home-v19" href="index.html" target="_top" aria-label="어피니티 유니버스 홈으로 돌아가기" title="어피니티 유니버스 홈으로 돌아가기"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z"/></svg></a>
+
   <header class="header">
     <div>
-      <div class="kicker">AFFINITY UNIVERSE TRAINING</div>
+      <a class="au-home-inline-v19 au-home-mobile-v23" href="index.html" target="_top" aria-label="어피니티 유니버스 홈으로 돌아가기" title="어피니티 유니버스 홈으로 돌아가기"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z"/></svg></a>
+        <div class="kicker">AFFINITY UNIVERSE TRAINING</div>
       <h1>타이핑 게임</h1>
       <p>위에서 내려오는 단어를 보고 똑같이 입력해 보세요.</p>
     </div>
@@ -995,8 +996,10 @@ html, body {
     <button class="btn primary" id="startBtn">게임 시작</button>
     <button class="btn" id="pauseBtn" disabled>일시정지</button>
     <button class="btn" id="resetBtn">다시 시작</button>
-    <button class="btn" id="fullBtn">전체화면으로 보기</button>
-    <a class="au-home-inline-v19" href="index.html" target="_top" aria-label="어피니티 유니버스 홈으로 돌아가기" title="어피니티 유니버스 홈으로 돌아가기"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z"/></svg></a>
+    <div class="au-home-toolbar-group-v22">
+      <button class="btn" id="fullBtn">전체화면으로 보기</button>
+      <a class="au-home-inline-v19" href="index.html" target="_top" aria-label="어피니티 유니버스 홈으로 돌아가기" title="어피니티 유니버스 홈으로 돌아가기"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z"/></svg><span class="au-home-toolbar-label-v22">홈 가기</span></a>
+    </div>
   </div>
 
   <section class="setup">
@@ -4292,5 +4295,417 @@ body.au-typing-viewport-lock-v18 {
   sync();
 })();
 </script>
+<style id="auHomeNextToFullscreenV22">
+/* Unified navigation in all four games: the Home action sits immediately
+   after Fullscreen rather than floating over the score cards. */
+#affinityShortcutGame > .au-game-home-v19,
+#app > .au-game-home-v19 {display:none !important;}
+#affinityShortcutGame .asg-toolbar > .au-home-toolbar-group-v22,
+#app .toolbar > .au-home-toolbar-group-v22 {
+  box-sizing:border-box !important;
+  display:flex !important;align-items:center !important;justify-content:flex-start !important;
+  min-width:0 !important;width:auto !important;max-width:100% !important;
+  flex:0 0 auto !important;gap:9px !important;
+  margin:0 !important;padding:0 !important;
+  order:4 !important;
+}
+/* Fullscreen keeps the same visual language as the other toolbar actions. */
+#affinityShortcutGame .asg-toolbar .au-home-toolbar-group-v22 > #asgFullscreenBtn,
+#app .toolbar .au-home-toolbar-group-v22 > #fullBtn {
+  box-sizing:border-box !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;
+  width:auto !important;max-width:100% !important;min-width:0 !important;
+  height:42px !important;min-height:42px !important;flex:0 1 auto !important;
+  padding:0 16px !important;margin:0 !important;
+  border:1px solid rgba(255,255,255,.09) !important;border-radius:11px !important;
+  background:rgba(17,32,61,.90) !important;color:#cbd6ea !important;
+  box-shadow:none !important;font-size:13px !important;font-weight:700 !important;
+  line-height:1.1 !important;text-align:center !important;
+}
+/* Original tutorial's blue treatment, now a labeled companion control. */
+#affinityShortcutGame .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19,
+#app .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 {
+  box-sizing:border-box !important;
+  display:inline-flex !important;align-items:center !important;justify-content:center !important;
+  flex:0 0 auto !important;width:auto !important;min-width:93px !important;max-width:none !important;
+  height:42px !important;min-height:42px !important;max-height:42px !important;
+  gap:7px !important;padding:0 13px !important;margin:0 !important;
+  border:1px solid rgba(212,233,255,.6) !important;border-radius:11px !important;
+  background:linear-gradient(145deg,#0866f8 0%,#1d83ff 100%) !important;
+  box-shadow:0 5px 13px rgba(0,100,255,.20),inset 0 1px 0 rgba(255,255,255,.20) !important;
+  color:#fff !important;text-decoration:none !important;white-space:nowrap !important;
+  font-size:13px !important;font-weight:800 !important;line-height:1 !important;
+  text-align:center !important;cursor:pointer !important;touch-action:manipulation !important;
+  -webkit-tap-highlight-color:transparent !important;
+}
+#affinityShortcutGame .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 svg,
+#app .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 svg {
+  display:block !important;flex:0 0 19px !important;width:19px !important;height:19px !important;
+  stroke:#fff !important;fill:none !important;pointer-events:none !important;
+}
+#affinityShortcutGame .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19:hover,
+#app .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19:hover {
+  transform:translateY(-2px) !important;filter:brightness(1.07) !important;
+}
+/* Half-width PC: four stat-aligned columns. Fullscreen and Home share
+   the fourth column without creating a fifth grid item or a second row. */
+@media (min-width:701px) and (max-width:1260px){
+  #affinityShortcutGame:not(.au-touch-tablet) .asg-toolbar > .au-home-toolbar-group-v22,
+  #app:not(.au-touch-tablet) .toolbar > .au-home-toolbar-group-v22 {
+    grid-column:4 !important;grid-row:1 !important;width:100% !important;
+    min-width:0 !important;gap:5px !important;
+  }
+  #affinityShortcutGame:not(.au-touch-tablet) .asg-toolbar .au-home-toolbar-group-v22 > #asgFullscreenBtn,
+  #app:not(.au-touch-tablet) .toolbar .au-home-toolbar-group-v22 > #fullBtn {
+    flex:1 1 auto !important;min-width:0 !important;width:0 !important;
+    height:46px !important;min-height:46px !important;
+    padding:0 3px !important;font-size:clamp(10px,1.1vw,13px) !important;
+    white-space:normal !important;overflow-wrap:normal !important;word-break:keep-all !important;
+  }
+  #affinityShortcutGame:not(.au-touch-tablet) .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19,
+  #app:not(.au-touch-tablet) .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 {
+    flex:0 0 auto !important;min-width:0 !important;width:clamp(65px,8.5vw,94px) !important;
+    height:46px !important;min-height:46px !important;max-height:46px !important;
+    gap:4px !important;padding:0 4px !important;font-size:clamp(10px,1.07vw,12px) !important;
+  }
+  #affinityShortcutGame:not(.au-touch-tablet) .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 svg,
+  #app:not(.au-touch-tablet) .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 svg {
+    width:16px !important;height:16px !important;flex-basis:16px !important;
+  }
+}
+/* On phone and iPad the native Fullscreen control is intentionally hidden.
+   Keep Home with the usable toolbar controls, never over the game field. */
+@media (max-width:700px){
+  #affinityShortcutGame .asg-toolbar > .au-home-toolbar-group-v22,
+  #app .toolbar > .au-home-toolbar-group-v22 {width:100% !important;min-width:0 !important;gap:0 !important;}
+  #affinityShortcutGame .asg-toolbar .au-home-toolbar-group-v22 > #asgFullscreenBtn,
+  #app .toolbar .au-home-toolbar-group-v22 > #fullBtn {display:none !important;}
+  #affinityShortcutGame .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19,
+  #app .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 {
+    width:100% !important;min-width:0 !important;max-width:100% !important;
+    height:35px !important;min-height:35px !important;max-height:35px !important;
+    padding:0 5px !important;gap:4px !important;font-size:11px !important;
+  }
+  #affinityShortcutGame.asg-playing .asg-toolbar,
+  #app.typing-in-game .toolbar {grid-template-columns:minmax(0,1fr) minmax(0,1fr) 85px !important;}
+  #affinityShortcutGame.asg-ready .asg-toolbar,
+  #affinityShortcutGame.asg-ended .asg-toolbar,
+  #app:not(.typing-in-game):not(.typing-ended) .toolbar,
+  #app.typing-ended .toolbar {
+    grid-template-columns:minmax(0,1fr) 85px !important;
+    gap:7px !important;
+  }
+  #affinityShortcutGame .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 svg,
+  #app .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 svg {
+    width:16px !important;height:16px !important;flex-basis:16px !important;
+  }
+}
+/* Coarse-pointer iPad can be wider than a phone while using a mobile play
+   toolbar. Home replaces the hidden Fullscreen action in its last column. */
+#affinityShortcutGame.au-touch-tablet .asg-toolbar > .au-home-toolbar-group-v22,
+#app.au-touch-tablet .toolbar > .au-home-toolbar-group-v22 {
+  width:100% !important;min-width:0 !important;max-width:100% !important;gap:0 !important;
+}
+#affinityShortcutGame.au-touch-tablet .asg-toolbar .au-home-toolbar-group-v22 > #asgFullscreenBtn,
+#app.au-touch-tablet .toolbar .au-home-toolbar-group-v22 > #fullBtn {display:none !important;}
+#affinityShortcutGame.au-touch-tablet .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19,
+#app.au-touch-tablet .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 {
+  width:100% !important;min-width:0 !important;max-width:100% !important;
+  height:39px !important;min-height:39px !important;max-height:39px !important;
+  padding:0 8px !important;gap:6px !important;font-size:13px !important;
+}
+#affinityShortcutGame.au-touch-tablet.asg-playing .asg-toolbar,
+#app.au-touch-tablet.typing-in-game .toolbar {
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) 116px !important;
+}
+#affinityShortcutGame.au-touch-tablet.asg-ready .asg-toolbar,
+#affinityShortcutGame.au-touch-tablet.asg-ended .asg-toolbar,
+#app.au-touch-tablet:not(.typing-in-game):not(.typing-ended) .toolbar,
+#app.au-touch-tablet.typing-ended .toolbar {
+  grid-template-columns:minmax(0,1fr) 116px !important;gap:8px !important;
+}
+@media(max-width:700px){
+  #affinityShortcutGame.au-touch-tablet.asg-playing .asg-toolbar,
+  #app.au-touch-tablet.typing-in-game .toolbar {grid-template-columns:minmax(0,1fr) minmax(0,1fr) 85px !important;}
+  #affinityShortcutGame.au-touch-tablet.asg-ready .asg-toolbar,
+  #affinityShortcutGame.au-touch-tablet.asg-ended .asg-toolbar,
+  #app.au-touch-tablet:not(.typing-in-game):not(.typing-ended) .toolbar,
+  #app.au-touch-tablet.typing-ended .toolbar {grid-template-columns:minmax(0,1fr) 85px !important;}
+  #affinityShortcutGame.au-touch-tablet .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19,
+  #app.au-touch-tablet .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 {
+    height:35px !important;min-height:35px !important;max-height:35px !important;
+    padding:0 4px !important;gap:4px !important;font-size:11px !important;
+  }
+}
+/* Final chooser retains its own corner Home control to ensure a direct exit. */
+</style>
+
+<style id="auMobileHomeCompactV24">
+/* Phone navigation: a quiet, tutorial-style home icon beside the brand before
+   playing; once the headline collapses, a compact icon beside Pause/Restart.
+   The primary Start button always spans the full available phone width. */
+#affinityShortcutGame .asg-header .au-home-mobile-v23,
+#app .header .au-home-mobile-v23 {display:none !important;}
+@media (max-width:700px) {
+  #affinityShortcutGame .asg-header > div:first-child,
+  #app .header > div:first-child {
+    position:relative !important;min-width:0 !important;
+    width:100% !important;padding-right:49px !important;
+  }
+  #affinityShortcutGame.asg-ready .asg-header > div:first-child > .au-home-mobile-v23,
+  #app:not(.typing-in-game):not(.typing-ended) .header > div:first-child > .au-home-mobile-v23 {
+    box-sizing:border-box !important;
+    position:absolute !important;top:0 !important;right:0 !important;left:auto !important;bottom:auto !important;
+    z-index:12 !important;
+    display:inline-flex !important;align-items:center !important;justify-content:center !important;
+    width:40px !important;height:40px !important;
+    min-width:40px !important;min-height:40px !important;
+    max-width:40px !important;max-height:40px !important;
+    flex:none !important;margin:0 !important;padding:9px !important;
+    border:1px solid rgba(212,233,255,.60) !important;border-radius:13px !important;
+    background:linear-gradient(145deg,#0866f8 0%,#1d83ff 100%) !important;
+    box-shadow:0 5px 13px rgba(0,100,255,.20),inset 0 1px 0 rgba(255,255,255,.20) !important;
+    text-decoration:none !important;color:#fff !important;
+    touch-action:manipulation !important;-webkit-tap-highlight-color:transparent !important;
+    cursor:pointer !important;
+  }
+  #affinityShortcutGame .asg-header .au-home-mobile-v23 svg,
+  #app .header .au-home-mobile-v23 svg {
+    width:21px !important;height:21px !important;display:block !important;flex:none !important;
+    stroke:#fff !important;fill:none !important;pointer-events:none !important;
+  }
+  /* Before game starts: the old fourth (Fullscreen/Home) group is absent. */
+  #affinityShortcutGame .asg-toolbar > .au-home-toolbar-group-v22,
+  #app .toolbar > .au-home-toolbar-group-v22 {display:none !important;}
+  #affinityShortcutGame.asg-ready .asg-toolbar,
+  #affinityShortcutGame.au-touch-tablet.asg-ready .asg-toolbar,
+  #app:not(.typing-in-game):not(.typing-ended) .toolbar,
+  #app.au-touch-tablet:not(.typing-in-game):not(.typing-ended) .toolbar {
+    grid-template-columns:minmax(0,1fr) !important;width:100% !important;
+  }
+  #affinityShortcutGame.asg-ready .asg-toolbar > #asgStartBtn,
+  #app:not(.typing-in-game):not(.typing-ended) .toolbar > #startBtn {
+    grid-column:1 / -1 !important;width:100% !important;
+    min-width:0 !important;max-width:100% !important;
+  }
+  /* During play or on the results/ranking view the heading may be hidden.
+     Show a small icon-only Home action, never a large labeled button. */
+  #affinityShortcutGame.asg-playing .asg-toolbar > .au-home-toolbar-group-v22,
+  #affinityShortcutGame.asg-ended .asg-toolbar > .au-home-toolbar-group-v22,
+  #app.typing-in-game .toolbar > .au-home-toolbar-group-v22,
+  #app.typing-ended .toolbar > .au-home-toolbar-group-v22 {
+    display:flex !important;grid-row:1 !important;align-self:center !important;
+    justify-self:end !important;align-items:center !important;justify-content:center !important;
+    width:40px !important;height:40px !important;min-width:40px !important;max-width:40px !important;
+    min-height:40px !important;max-height:40px !important;
+    margin:0 !important;padding:0 !important;gap:0 !important;flex:0 0 40px !important;
+  }
+  #affinityShortcutGame.asg-playing .asg-toolbar > .au-home-toolbar-group-v22,
+  #app.typing-in-game .toolbar > .au-home-toolbar-group-v22 {grid-column:3 !important;}
+  #affinityShortcutGame.asg-ended .asg-toolbar > .au-home-toolbar-group-v22,
+  #app.typing-ended .toolbar > .au-home-toolbar-group-v22 {grid-column:2 !important;}
+  #affinityShortcutGame .asg-toolbar .au-home-toolbar-group-v22 > #asgFullscreenBtn,
+  #app .toolbar .au-home-toolbar-group-v22 > #fullBtn {display:none !important;}
+  #affinityShortcutGame .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19,
+  #app .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 {
+    box-sizing:border-box !important;display:inline-flex !important;
+    flex:0 0 40px !important;width:40px !important;height:40px !important;
+    min-width:40px !important;min-height:40px !important;
+    max-width:40px !important;max-height:40px !important;
+    padding:0 !important;margin:0 !important;gap:0 !important;
+    align-items:center !important;justify-content:center !important;
+    border-radius:13px !important;font-size:0 !important;
+  }
+  #affinityShortcutGame .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 svg,
+  #app .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 svg {
+    flex:0 0 21px !important;width:21px !important;height:21px !important;
+  }
+  #affinityShortcutGame .asg-toolbar .au-home-toolbar-group-v22 .au-home-toolbar-label-v22,
+  #app .toolbar .au-home-toolbar-group-v22 .au-home-toolbar-label-v22 {display:none !important;}
+  #affinityShortcutGame.asg-playing .asg-toolbar,
+  #affinityShortcutGame.au-touch-tablet.asg-playing .asg-toolbar,
+  #app.typing-in-game .toolbar,
+  #app.au-touch-tablet.typing-in-game .toolbar {
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) 40px !important;
+    width:100% !important;
+  }
+  #affinityShortcutGame.asg-ended .asg-toolbar,
+  #affinityShortcutGame.au-touch-tablet.asg-ended .asg-toolbar,
+  #app.typing-ended .toolbar,
+  #app.au-touch-tablet.typing-ended .toolbar {
+    grid-template-columns:minmax(0,1fr) 40px !important;
+    width:100% !important;
+  }
+  #affinityShortcutGame.asg-ended .asg-toolbar > #asgResetBtn,
+  #app.typing-ended .toolbar > #resetBtn {
+    grid-column:1 !important;width:100% !important;
+    min-width:0 !important;max-width:100% !important;
+  }
+}
+</style>
+
+<style id="auMobileHomeStartBalanceV25">
+/* The original two-button mobile row: Start | [house] Home.
+   Equal font sizing, vertical centering, height and padding on both controls.
+   Keep the compact icon-only button during play and the desktop layout. */
+@media (max-width:700px) {
+  /* Undo the temporary top-right home icon from V23/V24. */
+  #affinityShortcutGame .asg-header > div:first-child,
+  #app .header > div:first-child {
+    padding-right:0 !important;
+  }
+  #affinityShortcutGame.asg-ready .asg-header > div:first-child > .au-home-mobile-v23,
+  #app:not(.typing-in-game):not(.typing-ended) .header > div:first-child > .au-home-mobile-v23 {
+    display:none !important;
+  }
+  #affinityShortcutGame.asg-ready .asg-toolbar,
+  #affinityShortcutGame.au-touch-tablet.asg-ready .asg-toolbar,
+  #app:not(.typing-in-game):not(.typing-ended) .toolbar,
+  #app.au-touch-tablet:not(.typing-in-game):not(.typing-ended) .toolbar {
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) clamp(104px,27vw,124px) !important;
+    grid-template-rows:48px !important;
+    align-items:stretch !important;
+    column-gap:8px !important;
+    row-gap:0 !important;
+    width:100% !important;
+    min-width:0 !important;
+  }
+  #affinityShortcutGame.asg-ready .asg-toolbar > #asgStartBtn,
+  #app:not(.typing-in-game):not(.typing-ended) .toolbar > #startBtn {
+    box-sizing:border-box !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    grid-column:1 !important;
+    grid-row:1 !important;
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    height:48px !important;
+    min-height:48px !important;
+    max-height:48px !important;
+    margin:0 !important;
+    padding:0 10px !important;
+    font-size:clamp(15px,4.4vw,18px) !important;
+    font-weight:800 !important;
+    line-height:1.2 !important;
+    white-space:nowrap !important;
+    text-align:center !important;
+  }
+  #affinityShortcutGame.asg-ready .asg-toolbar > .au-home-toolbar-group-v22,
+  #app:not(.typing-in-game):not(.typing-ended) .toolbar > .au-home-toolbar-group-v22 {
+    box-sizing:border-box !important;
+    display:flex !important;
+    align-items:stretch !important;
+    justify-content:stretch !important;
+    grid-column:2 !important;
+    grid-row:1 !important;
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    height:48px !important;
+    min-height:48px !important;
+    max-height:48px !important;
+    margin:0 !important;
+    padding:0 !important;
+    gap:0 !important;
+    flex:none !important;
+  }
+  #affinityShortcutGame.asg-ready .asg-toolbar .au-home-toolbar-group-v22 > #asgFullscreenBtn,
+  #app:not(.typing-in-game):not(.typing-ended) .toolbar .au-home-toolbar-group-v22 > #fullBtn {
+    display:none !important;
+  }
+  #affinityShortcutGame.asg-ready .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19,
+  #app:not(.typing-in-game):not(.typing-ended) .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 {
+    box-sizing:border-box !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex:1 1 auto !important;
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    height:48px !important;
+    min-height:48px !important;
+    max-height:48px !important;
+    margin:0 !important;
+    padding:0 8px !important;
+    gap:5px !important;
+    border-radius:12px !important;
+    color:#fff !important;
+    font-size:clamp(15px,4.4vw,18px) !important;
+    font-weight:800 !important;
+    line-height:1.2 !important;
+    white-space:nowrap !important;
+    text-decoration:none !important;
+  }
+  #affinityShortcutGame.asg-ready .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 svg,
+  #app:not(.typing-in-game):not(.typing-ended) .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 svg {
+    display:block !important;
+    flex:0 0 19px !important;
+    width:19px !important;
+    height:19px !important;
+  }
+  #affinityShortcutGame.asg-ready .asg-toolbar .au-home-toolbar-group-v22 .au-home-toolbar-label-v22,
+  #app:not(.typing-in-game):not(.typing-ended) .toolbar .au-home-toolbar-group-v22 .au-home-toolbar-label-v22 {
+    display:inline !important;
+    margin:0 !important;
+    padding:0 !important;
+    font-size:inherit !important;
+    font-weight:inherit !important;
+    line-height:inherit !important;
+    white-space:nowrap !important;
+  }
+}
+</style>
+
+
+<style id="auMobileHomeControlHeightParityV26">
+/* Phone gameplay: align the Home button's top and bottom edges precisely
+   with Pause and Restart without changing their sizes or toolbar layout. */
+@media (max-width:700px) {
+  #affinityShortcutGame.asg-playing .asg-toolbar > .au-home-toolbar-group-v22,
+  #app.typing-in-game .toolbar > .au-home-toolbar-group-v22,
+  #affinityShortcutGame.asg-playing .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19,
+  #app.typing-in-game .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 {
+    height:34px !important;
+    min-height:34px !important;
+    max-height:34px !important;
+    align-self:center !important;
+  }
+}
+/* Short phone viewports already use 30px Pause / Restart controls. */
+@media (max-width:700px) and (max-height:620px) {
+  #affinityShortcutGame.asg-playing .asg-toolbar > .au-home-toolbar-group-v22,
+  #app.typing-in-game .toolbar > .au-home-toolbar-group-v22,
+  #affinityShortcutGame.asg-playing .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19,
+  #app.typing-in-game .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 {
+    height:30px !important;
+    min-height:30px !important;
+    max-height:30px !important;
+  }
+}
+/* Tablet-width touch toolbars: match the actual 34px Pause / Restart height. */
+@media (min-width:701px) and (max-width:1180px) {
+  #affinityShortcutGame.au-touch-tablet.asg-playing .asg-toolbar > .au-home-toolbar-group-v22,
+  #app.au-touch-tablet.typing-in-game .toolbar > .au-home-toolbar-group-v22,
+  #affinityShortcutGame.au-touch-tablet.asg-playing .asg-toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19,
+  #app.au-touch-tablet.typing-in-game .toolbar .au-home-toolbar-group-v22 > .au-home-inline-v19 {
+    height:34px !important;
+    min-height:34px !important;
+    max-height:34px !important;
+    align-self:center !important;
+  }
+
+  /* Centre all three actions within the 39px tablet toolbar row. */
+  #affinityShortcutGame.au-touch-tablet.asg-playing .asg-toolbar > #asgPauseBtn,
+  #affinityShortcutGame.au-touch-tablet.asg-playing .asg-toolbar > #asgResetBtn,
+  #app.au-touch-tablet.typing-in-game .toolbar > #pauseBtn,
+  #app.au-touch-tablet.typing-in-game .toolbar > #resetBtn {
+    align-self:center !important;
+  }
+}
+</style>
+
 </body>
 </html>
